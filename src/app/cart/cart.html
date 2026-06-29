@@ -1,0 +1,40 @@
+<div class="cartLayout">
+  <div class="cartContainer">
+    @for (item of cartInfo(); track $index) {
+      <div class="cartCard">
+        <div class="left">
+          <img [src]="item.thumbnail" alt="" />
+        </div>
+
+        <div class="info">
+          <h3 class="title">{{ item.title }}</h3>
+          <h3 class="qty">Qty: {{ item.quantity }}</h3>
+          <h3 class="price">Price: {{ item.price.current }}</h3>
+          <h3 class="total">Total: {{ item.price.current * item.quantity }}</h3>
+          <button (click)="removeItem(item._id)">DELETE</button>
+        </div>
+      </div>
+    } @empty {
+      <h1>Your cart is empty...</h1>
+    }
+  </div>
+
+  <div class="summary">
+    <h2>Order Summary</h2>
+
+    @for (item of cartInfo(); track $index) {
+      <div class="summaryItem">
+        <span>{{ item.title }}</span>
+        <span>x{{ item.quantity }}</span>
+      </div>
+    }
+    <p>Shipping 15₾</p>
+
+    <div class="summaryTotal">
+      <strong>Total Price:</strong>
+      <strong>
+        {{ cartInfo().reduce((sum, item) => sum + item.price.current * item.quantity, +15) }}₾
+      </strong>
+    </div>
+  </div>
+</div>

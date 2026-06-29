@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: sans-serif;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 34px;
+  color: #f8fafc;
+  margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  width: 170px;
+  height: 170px;
+  margin: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #6366f1;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, .3);
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #cbd5e1;
+}
+
+hr {
+  width: 80%;
+  margin: 35px auto;
+  border: none;
+  border-top: 1px solid #334155;
+}
+
+button {
+  cursor: pointer;
+  transition: .3s;
+  border: none;
+  border-radius: 10px;
+}
+
+button:disabled {
+  background: #334155;
+  cursor: not-allowed;
+}
+
+form {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+.left,
+.right {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.field input,
+.field select {
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 15px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.field p {
+  margin: 0;
+  text-align: left;
+  font-size: 13px;
+  color: #ef4444;
+}
+
+.submit {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.submit button {
+  width: 250px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #10b981;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.submit button:hover:not(:disabled) {
+  background: #059669;
+}
+
+.submit button:disabled {
+  background: #334155;
+  cursor: not-allowed;
+}
+.logout {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 30px;
+  background: #ef4444;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.logout:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.logout:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 760px) {
+  form {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .left,
+  .right {
+    flex: 1 1 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  img {
+    width: 140px;
+    height: 140px;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="mainframe">
+  <p class="float" routerLink="/">Back</p>
+
+  <div class="left">
+    <img [src]="details().photo" alt="" />
+  </div>
+
+  <div class="right">
+    <h1>{{ details().brand }}</h1>
+
+    <h2>Price: ${{ details().price }}</h2>
+    <h2>Rating: {{ details().rate }}</h2>
+    <h2>Stock: {{ details().stock }}</h2>
+    <h2>Description: {{ details().desc }}</h2>
+
+    <div class="field">
+      <label>Rate</label>
+      <input type="number" min="1" max="5" [(ngModel)]="rate" />
+    </div>
+
+    <div class="field">
+      <label>Quantity</label>
+      <input type="number" min="1" [(ngModel)]="quantity" />
+    </div>
+
+    <button (click)="addToCart(details()._id)">
+      Add to cart
+    </button>
+  </div>
+</div>

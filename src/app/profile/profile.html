@@ -1,0 +1,61 @@
+<h1>{{ myInfo()?.firstName }} {{ myInfo()?.lastName }}</h1>
+<img [src]="myInfo()?.avatar" alt="" />
+<p>Phone: {{ myInfo()?.phone }}</p>
+<button class="logout" (click)="LogOut()">Log Out</button>
+<hr />
+
+<form [formGroup]="formInfo" (ngSubmit)="updateUser()">
+  <div class="left">
+    <div class="field">
+      <label for="">firstName</label>
+      <input type="text" formControlName="firstName" />
+      <p>Please Enter this field...</p>
+    </div>
+    <div class="field">
+      <label for="">lastName</label>
+      <input type="text" formControlName="lastName" />
+      <p>Please Enter this field...</p>
+    </div>
+
+    <div class="field">
+      <label for="">age </label>
+      <input type="text" formControlName="age" />
+      <p>Please Enter this field...</p>
+    </div>
+    <div class="field">
+      <label for="">address</label>
+      <input type="text" formControlName="address" />
+      <p>Please Enter this field...</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="field">
+      <label for="">phone</label>
+      <input type="text" formControlName="phone" />
+      <p>Please Enter this field...</p>
+    </div>
+    <div class="field">
+      <label for="">gender</label>
+      <select formControlName="gender">
+        <option value="">Choose Gender</option>
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+        <option value="OTHER">Other</option>
+      </select>
+      <p>Please Enter this field...</p>
+    </div>
+    <div class="field">
+      <label for="">zipcode</label>
+      <input type="text" formControlName="zipcode" />
+      <p>Please Enter this field...</p>
+    </div>
+    <div class="field">
+      <label for="">avatar</label>
+      <input type="text" formControlName="avatar" />
+      <p>Please Enter this field...</p>
+    </div>
+  </div>
+  <div class="submit">
+    <button [disabled]="formInfo.invalid">update</button>
+  </div>
+</form>

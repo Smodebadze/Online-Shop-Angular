@@ -1,0 +1,20 @@
+<div class="navbar">
+  <div class="left">
+    <h1 routerLink="/">Online Shop</h1>
+  </div>
+
+  <div class="right">
+    <p routerLink="/">products</p>
+
+
+    <p routerLink="/cart">cart</p>
+
+    @if (!isLoggedIn) {
+      <p routerLink="/signup">sign up</p>
+    }
+
+    @if (isLoggedIn) {
+      <p routerLink="/profile">account</p>
+    }
+  </div>
+</div>

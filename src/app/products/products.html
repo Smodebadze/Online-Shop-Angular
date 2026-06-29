@@ -1,0 +1,71 @@
+<div class="searchByBrand">
+  <h2 (click)="GetAll()">all</h2>
+  @for (item of allBrands(); track $index) {
+    <h2 (click)="Filter(item)">{{ item }}</h2>
+  }
+</div>
+<section>
+  <div class="search">
+    <input type="text" [(ngModel)]="name" placeholder="Product name" />
+    <input type="text" [(ngModel)]="brand" placeholder="Brand name" />
+    <input type="number" [(ngModel)]="rating" placeholder="Rating" />
+    <input type="number" [(ngModel)]="minPrice" placeholder="Minimum Price" />
+    <input type="number" [(ngModel)]="maxPrice" placeholder="Maximum Price" />
+    <select name="" id="" [(ngModel)]="cat">
+      <option value="" disabled>Select category</option>
+      <option value="1">Laptop</option>
+      <option value="2">Phone</option>
+    </select>
+    <select name="" id="" [(ngModel)]="sortBy">
+      <option value="" disabled>Select category</option>
+      <option value="rating">Rating</option>
+      <option value="price">Price</option>
+      <option value="issue_date">Issue date</option>
+      <option value="title">Title</option>
+    </select>
+    <select name="" id="" [(ngModel)]="sortDir">
+      <option value="" disabled>Select category</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <button (click)="allSearch()">Search</button>
+  </div>
+
+  <div class="products">
+    @for (item of allProducts(); track $index) {
+      <div class="card">
+        <img [src]="item.thumbnail" alt="" />
+        <h2>{{ item.brand }}</h2>
+        <p>Price: {{ item.price.current }}₾</p>
+        <p>Stock: {{ item.stock }}</p>
+        <button
+          [disabled]="item.stock <= 0"
+          [routerLink]="['/details']"
+          [queryParams]="{
+            id: item.category.id,
+            price: item.price.current,
+            rate: item.rating,
+            stock: item.stock,
+            photo: item.thumbnail,
+            desc: item.description,
+            brand: item.brand,
+            _id: item._id,
+          }"
+        >
+          {{ item.stock <= 0 ? 'Out of Stock' : 'Go to details' }}
+        </button>
+      </div>
+    }
+
+  </div>
+
+  <div class="pages">
+    <button [disabled]="currentPage == 1" (click)="showCards(currentPage - 1)">Previous</button>
+    @for (item of pages(); track $index) {
+      <button (click)="showCards(item)">{{item}}</button>
+    }
+    <button [disabled]="currentPage == pages().length" (click)="showCards(currentPage + 1)">
+      Next
+    </button>
+  </div>
+</section>
