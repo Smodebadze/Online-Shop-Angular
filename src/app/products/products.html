@@ -56,14 +56,15 @@
         </button>
       </div>
     }
-
   </div>
 
   <div class="pages">
     <button [disabled]="currentPage == 1" (click)="showCards(currentPage - 1)">Previous</button>
-    @for (item of pages(); track $index) {
-      <button (click)="showCards(item)">{{item}}</button>
-    }
+    <div class="pagesButt">
+      @for (item of pages(); track $index) {
+        <button (click)="showCards(item)">{{ item }}</button>
+      }
+    </div>
     <button [disabled]="currentPage == pages().length" (click)="showCards(currentPage + 1)">
       Next
     </button>

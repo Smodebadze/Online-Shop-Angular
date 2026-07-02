@@ -183,3 +183,14 @@ section {
 .pages button:active:not(:disabled) {
   transform: scale(0.96);
 }
+
+@media(max-width: 500px){
+  .pages {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .pagesButt{
+    gap: 10px;
+    display: flex;
+  }
+}
