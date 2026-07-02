@@ -3,9 +3,11 @@
     <h1 routerLink="/">Online Shop</h1>
   </div>
 
-  <div class="right">
+  <button class="bbar" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <div class="right" [class.active]="menuOpen">
     <p routerLink="/">products</p>
-
 
     <p routerLink="/cart">cart</p>
 
@@ -18,3 +20,4 @@
     }
   </div>
 </div>
+

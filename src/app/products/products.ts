@@ -108,4 +108,14 @@ export class Products {
       },
     });
   }
+
+  miniMenuOpen = false;
+
+  miniToggleMenu() {
+    this.miniMenuOpen = !this.miniMenuOpen;
+  }
+
+
+
+  
 }

@@ -4,31 +4,86 @@
     <h2 (click)="Filter(item)">{{ item }}</h2>
   }
 </div>
+
+<button class="MiniSearch" (click)="miniToggleMenu()">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+<div class="MiniBar" [class.active]="miniMenuOpen"></div>
 <section>
-  <div class="search">
+  <div class="overlay" [class.active]="miniMenuOpen" (click)="miniToggleMenu()"></div>
+
+  <div class="searchT">
     <input type="text" [(ngModel)]="name" placeholder="Product name" />
     <input type="text" [(ngModel)]="brand" placeholder="Brand name" />
     <input type="number" [(ngModel)]="rating" placeholder="Rating" />
     <input type="number" [(ngModel)]="minPrice" placeholder="Minimum Price" />
     <input type="number" [(ngModel)]="maxPrice" placeholder="Maximum Price" />
-    <select name="" id="" [(ngModel)]="cat">
-      <option value="" disabled>Select category</option>
+
+    <select [(ngModel)]="cat">
+      <option [ngValue]="null" disabled>Select category</option>
       <option value="1">Laptop</option>
       <option value="2">Phone</option>
     </select>
-    <select name="" id="" [(ngModel)]="sortBy">
-      <option value="" disabled>Select category</option>
+
+    <select [(ngModel)]="sortBy">
+      <option [ngValue]="null" disabled>Select sort</option>
       <option value="rating">Rating</option>
       <option value="price">Price</option>
       <option value="issue_date">Issue date</option>
       <option value="title">Title</option>
     </select>
-    <select name="" id="" [(ngModel)]="sortDir">
-      <option value="" disabled>Select category</option>
+
+    <select [(ngModel)]="sortDir">
+      <option [ngValue]="null" disabled>Select order</option>
       <option value="asc">Ascending</option>
       <option value="desc">Descending</option>
     </select>
+
     <button (click)="allSearch()">Search</button>
+  </div>
+
+  <div class="MiniBar" [class.active]="miniMenuOpen">
+    <h2>Search Products</h2>
+
+    <div class="search">
+      <input type="text" [(ngModel)]="name" placeholder="Product name" />
+      <input type="text" [(ngModel)]="brand" placeholder="Brand name" />
+      <input type="number" [(ngModel)]="rating" placeholder="Rating" />
+      <input type="number" [(ngModel)]="minPrice" placeholder="Minimum Price" />
+      <input type="number" [(ngModel)]="maxPrice" placeholder="Maximum Price" />
+
+      <select [(ngModel)]="cat">
+        <option [ngValue]="null" disabled>Select category</option>
+        <option value="1">Laptop</option>
+        <option value="2">Phone</option>
+      </select>
+
+      <select [(ngModel)]="sortBy">
+        <option [ngValue]="null" disabled>Select sort</option>
+        <option value="rating">Rating</option>
+        <option value="price">Price</option>
+        <option value="issue_date">Issue date</option>
+        <option value="title">Title</option>
+      </select>
+
+      <select [(ngModel)]="sortDir">
+        <option [ngValue]="null" disabled>Select order</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+
+      <button (click)="allSearch(); miniToggleMenu()">Search</button>
+    </div>
+
+    <hr>
+
+    <div class="searchByBrandS">
+  <h2 (click)="GetAll()">all</h2>
+  @for (item of allBrands(); track $index) {
+    <h2 (click)="Filter(item)">{{ item }}</h2>
+  }
+</div>
   </div>
 
   <div class="products">

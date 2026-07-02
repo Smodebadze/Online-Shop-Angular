@@ -29,4 +29,17 @@ export class Navbar implements OnInit {
   checkAuth() {
     this.isLoggedIn = !!this.cookie.get('user');
   }
+
+
+  // __________________________________________________________________
+
+
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+ 
+
 }
