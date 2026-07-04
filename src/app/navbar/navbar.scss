@@ -2,10 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 .navbar {
-
   .right {
     display: flex;
     gap: 30px;
@@ -37,8 +37,6 @@
   position: relative;
   border-bottom: 1px solid #1e293b;
 }
-
-
 
 @media (max-width: 600px) {
   .navbar {
@@ -77,9 +75,4 @@
       transform: translateX(0);
     }
   }
-
 }
-
-
-
-
