@@ -41,7 +41,7 @@
     </select>
 
     <button (click)="allSearch()">Search</button>
-    <button (click)="allSearchReset()">Reset</button>
+    <button (click)="allSearchReset(); allSearch()">Reset</button>
   </div>
 
   <div class="MiniBar" [class.active]="miniMenuOpen">
@@ -76,7 +76,7 @@
 
       <div class="btnsmenu">
         <button (click)="allSearch(); miniToggleMenu()">Search</button>
-        <button (click)="allSearchReset()">Reset</button>
+        <button (click)="allSearchReset(); allSearch()">Reset</button>
       </div>
     </div>
 
