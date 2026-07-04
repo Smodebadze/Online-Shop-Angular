@@ -11,6 +11,17 @@ body {
   color: #e2e8f0;
 }
 
+.btnsmenu{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  button{
+    width: 48%;
+  }
+}
+
+
+
 .searchByBrandS {
   display: flex;
   flex-wrap: wrap;

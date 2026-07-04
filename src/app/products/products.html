@@ -41,6 +41,7 @@
     </select>
 
     <button (click)="allSearch()">Search</button>
+    <button (click)="allSearchReset()">Reset</button>
   </div>
 
   <div class="MiniBar" [class.active]="miniMenuOpen">
@@ -73,17 +74,20 @@
         <option value="desc">Descending</option>
       </select>
 
-      <button (click)="allSearch(); miniToggleMenu()">Search</button>
+      <div class="btnsmenu">
+        <button (click)="allSearch(); miniToggleMenu()">Search</button>
+        <button (click)="allSearchReset()">Reset</button>
+      </div>
     </div>
 
-    <hr>
+    <hr />
 
     <div class="searchByBrandS">
-  <h2 (click)="GetAll()">all</h2>
-  @for (item of allBrands(); track $index) {
-    <h2 (click)="Filter(item)">{{ item }}</h2>
-  }
-</div>
+      <h2 (click)="GetAll()">all</h2>
+      @for (item of allBrands(); track $index) {
+        <h2 (click)="Filter(item)">{{ item }}</h2>
+      }
+    </div>
   </div>
 
   <div class="products">

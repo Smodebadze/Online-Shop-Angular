@@ -115,7 +115,14 @@ export class Products {
     this.miniMenuOpen = !this.miniMenuOpen;
   }
 
-
-
-  
+  allSearchReset() {
+        this.name = ``
+        this.cat = ``
+        this.brand = ``
+        this.rating = 
+        this.minPrice = 
+        this.maxPrice = 
+        this.sortBy = ``
+        this.sortDir = ``
+  }
 }
