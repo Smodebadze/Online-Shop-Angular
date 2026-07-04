@@ -346,4 +346,13 @@ section {
   .searchByBrand {
     display: none;
   }
+
+
+  .pages{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+
 }
