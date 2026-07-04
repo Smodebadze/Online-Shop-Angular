@@ -5,7 +5,6 @@
         <div class="left">
           <img [src]="item.thumbnail" alt="" />
         </div>
-
         <div class="info">
           <h3 class="title">{{ item.title }}</h3>
           <h3 class="qty">Qty: {{ item.quantity }}</h3>
@@ -19,22 +18,24 @@
     }
   </div>
 
-  <div class="summary">
-    <h2>Order Summary</h2>
+  @if(cartInfo().length > 0){
+    <div class="summary">
+      <h2>Order Summary</h2>
 
-    @for (item of cartInfo(); track $index) {
-      <div class="summaryItem">
-        <span>{{ item.title }}</span>
-        <span>x{{ item.quantity }}</span>
+      @for (item of cartInfo(); track $index) {
+        <div class="summaryItem">
+          <span>{{ item.title }}</span>
+          <span>x{{ item.quantity }}</span>
+        </div>
+      }
+      <p>Shipping 15₾</p>
+
+      <div class="summaryTotal">
+        <strong>Total Price:</strong>
+        <strong>
+          {{ cartInfo().reduce((sum, item) => sum + item.price.current * item.quantity, +15) }}₾
+        </strong>
       </div>
-    }
-    <p>Shipping 15₾</p>
-
-    <div class="summaryTotal">
-      <strong>Total Price:</strong>
-      <strong>
-        {{ cartInfo().reduce((sum, item) => sum + item.price.current * item.quantity, +15) }}₾
-      </strong>
     </div>
-  </div>
+  }
 </div>
