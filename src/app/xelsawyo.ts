@@ -43,7 +43,7 @@ export class Xelsawyo {
 
   filterBrands(item: any) {
     return this.service.get(
-      `https://api.everrest.educata.dev/shop/products/brand/${item}?page_index=1&page_size=38`,
+      `https://api.everrest.educata.dev/shop/products/brand/${item}?page_index=1&page_size=15`,
     );
   }
 
@@ -68,7 +68,7 @@ export class Xelsawyo {
     sortDir: any,
   ) {
     return this.service.get(
-      `https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=38` +
+      `https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=15` +
         `&keywords=${name ?? ''}` +
         `&category_id=${catId ?? ''}` +
         `&brand=${brand ?? ''}` +
@@ -106,7 +106,7 @@ export class Xelsawyo {
 
   fullCards() {
     return this.service.get(
-      `https://api.everrest.educata.dev/shop/products/all?page_index=1&page_size=38`,
+      `https://api.everrest.educata.dev/shop/products/all?page_index=1&page_size=15`,
     );
   }
 

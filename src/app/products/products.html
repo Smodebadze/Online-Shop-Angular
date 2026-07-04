@@ -55,13 +55,13 @@
       <input type="number" [(ngModel)]="maxPrice" placeholder="Maximum Price" />
 
       <select [(ngModel)]="cat">
-        <option [ngValue]="null" disabled>Select category</option>
+        <option [ngValue]="null" selected>Select category</option>
         <option value="1">Laptop</option>
         <option value="2">Phone</option>
       </select>
 
       <select [(ngModel)]="sortBy">
-        <option [ngValue]="null" disabled>Select sort</option>
+        <option [ngValue]="null" selected>Select sort</option>
         <option value="rating">Rating</option>
         <option value="price">Price</option>
         <option value="issue_date">Issue date</option>
@@ -69,7 +69,7 @@
       </select>
 
       <select [(ngModel)]="sortDir">
-        <option [ngValue]="null" disabled>Select order</option>
+        <option [ngValue]="null" selected>Select order</option>
         <option value="asc">Ascending</option>
         <option value="desc">Descending</option>
       </select>

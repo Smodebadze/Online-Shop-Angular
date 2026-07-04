@@ -116,5 +116,15 @@ export class Products {
   }
 
   allSearchReset() {
+    this.name = null;
+    this.cat = null;
+    this.brand = null;
+    this.rating = null;
+    this.minPrice = null;
+    this.maxPrice = null;
+    this.sortBy = null;
+    this.sortDir = null;
+
+    this.GetAll();
   }
 }
